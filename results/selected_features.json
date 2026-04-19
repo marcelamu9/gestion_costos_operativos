@@ -1,0 +1,11 @@
+{
+  "Price_Equipo1": [
+    "Price_X",
+    "Price_Y"
+  ],
+  "Price_Equipo2": [
+    "Price_X",
+    "Price_Y",
+    "Price_Z"
+  ]
+}
