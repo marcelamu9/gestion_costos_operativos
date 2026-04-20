@@ -103,13 +103,11 @@ Preguntas de ejemplo para el agente:
 Ver `architecture/aws_architecture.drawio` para el diagrama completo.
 
 **Componentes principales:**
-- **Amazon S3**: almacenamiento de CSVs históricos, resultados y Data Lake (Parquet)
-- **AWS Glue**: pipeline ETL de ingesta, limpieza y transformación
-- **Amazon Redshift**: almacén analítico para consultas históricas
-- **Amazon SageMaker**: entrenamiento, registro y exposición del modelo (Studio + Training Jobs + Endpoint)
-- **AWS Fargate / ECS**: despliegue del agente conversacional como contenedor
-- **AWS Lambda**: trigger de re-entrenamiento mensual automático
-- **Amazon API Gateway**: gateway para exposición segura de la API
+- **Amazon S3**: almacenamiento de CSVs históricos (`raw/`), datos limpios (`processed/`) y resultados (`results/`)
+- **Amazon EC2**: ejecución del pipeline ETL (`data_loader.py`) y entrenamiento del modelo
+- **Amazon SageMaker**: Studio para análisis, Model Registry y Serverless Endpoint para inferencia
+- **AWS Lambda + API Gateway**: agente conversacional expuesto como API REST
+- **Amazon EventBridge**: trigger mensual automático para re-entrenamiento
 - **Amazon QuickSight**: dashboard de proyecciones para gerencia
 
 ---
